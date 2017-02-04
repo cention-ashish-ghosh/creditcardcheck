@@ -72,13 +72,13 @@ func (c *CreditCard) creditCardNumberValidate() (bool, error) {
 func CheckCreditCard(cardNumber string) *CreditCardStatus {
 	var status string
 	card := &CreditCard{
-		CardNumber: strings.TrimSpace(cardNumber),
+		CardNumber: strings.Replace(cardNumber, " ", "", -1),
 	}
 	ct := card.retriveCreditCardType()
 	n, err := card.creditCardNumberValidate()
 	if err != nil {
 		return &CreditCardStatus{
-			CardNumber: cardNumber,
+			CardNumber: card.CardNumber,
 			Error:      err,
 		}
 	}
@@ -89,7 +89,7 @@ func CheckCreditCard(cardNumber string) *CreditCardStatus {
 	}
 	return &CreditCardStatus{
 		CardType:   ct,
-		CardNumber: cardNumber,
+		CardNumber: card.CardNumber,
 		CardStatus: status,
 	}
 }
