@@ -13,7 +13,7 @@ type CreditCardStatus struct {
 	CardType   string `json:"cardType"`
 	CardNumber string `json:"cardNumber"`
 	CardStatus string `json:"cardStatus"`
-	Error      error `json:"error"`
+	Error      error  `json:"error"`
 }
 
 func sumOfTwoDigit(a int) (int, error) {
@@ -72,7 +72,7 @@ func (c *CreditCard) creditCardNumberValidate() (bool, error) {
 func CheckCreditCard(cardNumber string) *CreditCardStatus {
 	var status string
 	card := &CreditCard{
-		CardNumber: cardNumber,
+		CardNumber: strings.TrimSpace(cardNumber),
 	}
 	ct := card.retriveCreditCardType()
 	n, err := card.creditCardNumberValidate()
