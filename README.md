@@ -3,7 +3,7 @@
 #go get github.com/ashish041/creditcardcheck
 
 
-
+```
 package main
 
 import (
@@ -12,7 +12,7 @@ import (
 	"github.com/ashish041/creditcardcheck"
 )
 
-```func main() {
+func main() {
 	cardList := []string{
 		"4111111111111111",
 		"4111111111111",
@@ -31,4 +31,5 @@ import (
 			fmt.Printf("%s: %s    (%s)\n", r.CardType, r.CardNumber, r.CardStatus)
 		}
 	}
-}```
+}
+```
