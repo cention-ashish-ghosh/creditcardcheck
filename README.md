@@ -12,7 +12,7 @@ import (
 	"github.com/ashish041/creditcardcheck"
 )
 
-func main() {
+```func main() {
 	cardList := []string{
 		"4111111111111111",
 		"4111111111111",
@@ -31,4 +31,4 @@ func main() {
 			fmt.Printf("%s: %s    (%s)\n", r.CardType, r.CardNumber, r.CardStatus)
 		}
 	}
-}
+}```
